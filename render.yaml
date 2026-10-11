@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: hr-platform-mvp
+    env: docker
+    region: oregon
+    plan: free
+    
+    # Build configuration
+    dockerfilePath: ./Dockerfile
+    
+    # Environment variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+    
+    # Health check
+    healthCheckPath: /
+    
+    # Auto-deploy on push
+    autoDeploy: true
